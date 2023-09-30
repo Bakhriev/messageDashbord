@@ -19,17 +19,11 @@
 
 .wrapper {
 	display: grid;
-	grid-template-columns: 100px minmax(320px, 370px) minmax(600px, 1fr) minmax(
-			320px,
-			370px
-		);
+	grid-template-columns: 100px minmax(320px, 370px) minmax(600px, 1fr) auto;
 	height: 100vh;
 	overflow-x: auto;
 }
 
-.section-chat {
-}
-
 .section-info {
-	border-left: 1px solid var(--border-color);
+
 }

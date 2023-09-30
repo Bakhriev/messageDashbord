@@ -1,0 +1,254 @@
+.section-info {
+	height: 100vh;
+	overflow-x: hidden;
+	overflow-y: auto;
+
+	width: 0;
+	transition:
+		width 150ms ease-in-out,
+		padding 150ms ease-in-out;
+	border-left: 1px solid var(--border-color);
+	&.active {
+		width: 370px;
+		padding: 24px;
+	}
+
+	// .section-info__btn
+
+	&__btn {
+		margin-bottom: 24px;
+		border: 1px solid var(--border-color);
+		margin-left: auto;
+		width: 52px;
+		height: 52px;
+		border-radius: 50%;
+		display: grid;
+		place-items: center;
+		transition: background-color 150ms ease-in-out;
+		@include hover {
+			background-color: var(--seaGreen);
+		}
+		&:active {
+			background-color: var(--seaGreen);
+		}
+	}
+}
+
+.info-block {
+	border-bottom: 1px solid var(--border-color);
+	padding-bottom: 26px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	// .info-block__img
+
+	&__img {
+		margin-bottom: 14px;
+		border-radius: 50%;
+		overflow: hidden;
+		width: 136px;
+		height: 136px;
+		border: 6px solid #329993;
+	}
+
+	// .info-block__name
+
+	&__name {
+		margin-bottom: 4px;
+		color: var(--primary-text-color);
+		font-family: 'Satoshi';
+		font-size: 32px;
+		font-style: normal;
+		font-weight: 700;
+	}
+
+	// .info-block__nickname
+
+	&__nickname {
+		color: #465352;
+		font-family: 'Satoshi';
+		font-size: 16px;
+		font-weight: 400;
+	}
+}
+.notifications {
+	padding-top: 24px;
+	border-bottom: 1px solid var(--border-color);
+	padding-bottom: 26px;
+	// .notifications__title
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+
+	&__title {
+		color: #171c1b;
+		font-family: 'Satoshi';
+		font-size: 16px;
+		font-weight: 700;
+	}
+}
+.toggle-btn {
+	display: block;
+	position: relative;
+	width: 50px;
+	height: 24px;
+	border-radius: 60px;
+	overflow: hidden;
+	cursor: pointer;
+
+	&__bg {
+		padding: 2px;
+		transition: background-color 150ms ease-in-out;
+		width: 100%;
+		height: 100%;
+		background-color: var(--lightGreen);
+	}
+	input {
+		display: none;
+	}
+
+	&__switch {
+		position: absolute;
+		width: 20px;
+		height: 90%;
+		right: 2px;
+		top: 50%;
+		transform: translateY(-50%);
+		background-color: #fff;
+		border-radius: 50%;
+		transition: right 150ms ease-in-out;
+	}
+}
+.toggle-btn input:checked ~ .toggle-btn__bg {
+	background-color: var(--lightGray) !important;
+}
+.toggle-btn > input:checked ~ .toggle-btn__switch {
+	right: 28px;
+}
+.files {
+	&:not(:last-child) {
+		border-bottom: 1px solid var(--border-color);
+	}
+	padding-bottom: 24px;
+	padding-top: 24px;
+	// .files__toggle
+
+	&__toggle {
+		cursor: pointer;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 20px;
+	}
+
+	// .files__title
+
+	&__title {
+		color: var(--primary-text-color);
+		font-family: 'Satoshi';
+		font-size: 16px;
+		font-weight: 700;
+		span {
+			padding-left: 3px;
+			font-weight: 400;
+			color: var(--lightGray);
+		}
+	}
+
+	// .files__icon
+
+	&__icon {
+	}
+}
+.files-menu-img {
+	margin-top: 20px;
+	margin-bottom: 30px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 12px;
+	&__item {
+		&--last {
+			cursor: pointer;
+			position: relative;
+			&::before {
+				content: '6+';
+				position: absolute;
+				z-index: 1;
+				@include center;
+				color: #fff;
+				font-family: 'Satoshi';
+				font-size: 32px;
+				font-weight: 700;
+			}
+			&::after {
+				content: '';
+				position: absolute;
+				inset: 0;
+				background: linear-gradient(
+					0deg,
+					rgba(0, 0, 0, 0.6) 0%,
+					rgba(0, 0, 0, 0.6) 100%
+				);
+			}
+		}
+		height: 100px;
+		border-radius: 20px;
+		overflow: hidden;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+}
+.files-menu {
+	margin-bottom: 14px;
+	margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+	// .files-menu__item
+	&__left {
+		svg {
+			width: 24px;
+			height: 24px;
+		}
+		display: flex;
+		align-items: center;
+		gap: 6px;
+	}
+	&__item {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		color: #5d6f6d;
+		font-family: 'Satoshi';
+		font-size: 16px;
+		font-weight: 400;
+	}
+}
+
+.show-more {
+	cursor: pointer;
+	color: #329993;
+	font-family: Satoshi;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+}
+.blockuser-btn {
+	padding: 12px 20px;
+	border-radius: 52px;
+	border: 1px solid #d00;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	user-select: none;
+	color: #d00;
+	font-family: 'Satoshi';
+	font-size: 16px;
+	font-weight: 500;
+}
