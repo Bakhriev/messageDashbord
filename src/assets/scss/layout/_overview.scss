@@ -2,7 +2,7 @@
 	padding: 20px 24px;
 	border-right: 1px solid var(--border-color);
 	border-left: 1px solid var(--border-color);
-	max-height: 100vh;
+	height: 100vh;
 	overflow-y: auto;
 	overflow-x: hidden;
 }
@@ -103,6 +103,9 @@
 		@include hover {
 			background-color: var(--darkGreen);
 		}
+		&:active {
+			background-color: var(--darkGreen);
+		}
 
 		color: #fff;
 		font-family: 'Satoshi';
@@ -137,6 +140,12 @@
 	gap: 10px;
 	position: relative;
 	@include hover {
+		&::before {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+	&:active {
 		&::before {
 			opacity: 1;
 			visibility: visible;
