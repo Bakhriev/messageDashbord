@@ -1,0 +1,35 @@
+// Base
+@import './base/reset';
+
+// Font
+@import './fonts/fonts';
+
+// Sass-utils
+@import './sass-utils/variables';
+@import './sass-utils/helpers';
+
+// Global
+@import './sass-utils/global';
+
+// Layouts
+@import './layout/nav';
+@import './layout/overview';
+@import './layout/chat';
+@import './layout/info';
+
+.wrapper {
+	display: grid;
+	grid-template-columns: 100px minmax(320px, 370px) minmax(400px, 1fr) minmax(
+			320px,
+			370px
+		);
+	height: 100vh;
+	overflow-x: auto;
+}
+
+.section-chat {
+}
+
+.section-info {
+	border-left: 1px solid var(--border-color);
+}

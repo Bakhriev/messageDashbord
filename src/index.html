@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+	@include('assets/layout/head/head.html', {"title": 'Your Title'})
+
+	<body>
+		<div class="wrapper">
+			@include('./assets/layout/nav.html')
+			@include('./assets/layout/overview.html')
+			@include('./assets/layout/chat.html')
+			@include('./assets/layout/info.html')
+		</div>
+		<script type="module" src="assets/js/main.js"></script>
+	</body>
+</html>
